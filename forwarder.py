@@ -10,8 +10,8 @@ def parse_log_line(line):
     entry = {}
     entry['datetime'] = strptime(
         time, "%d/%b/%Y:%H:%M:%S").strftime("%Y-%m-%d %H:%M")
-    entry['source'] = hostname
-    entry['type'] = 'www_access'
+    entry['source'] = "'{}'".format(hostname)
+    entry['type'] = "'www_access'"
     entry['log'] = "'{}'".format(line.rstrip())
     return entry
 
